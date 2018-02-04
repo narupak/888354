@@ -4,9 +4,17 @@
 		var text_search = document.getElementById("text_search").value;
 		var result1 = "";
 			if(document.getElementById("sen_Y").checked == true){
-				result1 = input.match(new RegExp(text_search,'g')).length;
+				if(input.match(new RegExp(text_search,'g')) == null){
+					result1 = 0;
+				}else{
+					result1 = input.match(new RegExp(text_search,'g')).length;
+				}
 			}else if(document.getElementById("sen_N").checked == true){
-				result1 = input.match(new RegExp(text_search,'gi')).length;
+				if(input.match(new RegExp(text_search,'gi')) == null){
+					result1 = 0;
+				}else{
+					result1 = input.match(new RegExp(text_search,'gi')).length;
+				}
 			}
 		document.getElementById("result").innerHTML = result1;
 	}
