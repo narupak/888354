@@ -1,0 +1,64 @@
+<html>
+	<head>
+		<style>
+		div#head{
+    perspective: 500px;
+		}
+		div#sub {
+			width: 300px;
+			height: 100px;
+			background-color: yellow;
+			border: 1px solid black;
+			-webkit-transform: translate(50px,100px); /* Safari */
+			-ms-transform: translate(50px,100px); /* IE 9 */
+			transform:  translate(300px,50px) rotateX(45deg) scale(2,3);/* Standard syntax */
+		}
+		div#tran{
+			width : 100px;
+			height : 100px;
+			background-color :red;
+			transition : width 2s,opacity 2s,height 2s,background 2s;
+			transform: translate(100px,200px) ;
+		}
+		div#tran:hover{
+			background-color : green;
+			transition : width 2s,opacity 2s,height 2s,background 2s;
+			width : 500px;
+			height : 500px;
+			opacity: 0;
+		}
+		div#anime{
+			width : 100px;
+			height : 100px;
+			transform: translate(100px,250px);
+			animation-name: anime-test;
+			animation-duration: 4s;
+			animation-iteration-count: infinite;
+			position : absolute;
+			border-radius : 50px; 
+			background: linear-gradient(red, yellow);
+}
+		}
+		
+		@keyframes anime-test {
+			  0%   {transform : rotate(25deg); }
+			  25%  {transform : rotate(50deg);   }
+			  50%  {transform : rotate(75deg); }
+			  75%  {transform : rotate(180deg);   }
+			  100% {transform : rotate(360deg);   }
+		}
+		</style>
+	</head>
+	<body>
+		<h1>The translate() Method</h1>
+<p>The translate() method moves an element from its current position:</p>
+
+<div id = "head">
+	<div id = "sub">
+		This div element is moved 50 pixels to the right, and 100 pixels down from its current position.
+	</div>
+</div>
+<div id = "tran"></div>
+<div id = "anime"></div>
+	</body>
+</html>

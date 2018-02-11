@@ -1,0 +1,46 @@
+<script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+	$(document).ready(function(){
+		$("#random").click(function(){
+			var first_num = Math.floor(Math.random() * 1000);
+			var last_num = Math.floor(Math.random() * 1000);
+			$("#first_num").val(first_num);
+			$("#last_num").val(last_num);
+			$("#first_num").html(first_num);
+			$("#last_num").html(last_num);
+		});
+		$("#check").click(function(){
+			var first_num_cal = $("#first_num").val();
+			var last_num_cal = $("#last_num").val();
+			var answer_manual = $("#answer").val();
+			var result = "";
+			var sum = first_num_cal+last_num_cal;
+			if(parseInt(first_num_cal)+parseInt(last_num_cal) == answer_manual){
+				result = "That right";
+			}else{
+				result = "That wrong";
+			}
+			$("#result").html(result);
+		});
+	});
+</script>
+<html>
+	<head>
+		<center>
+			<h1>EX2-Random</h1>
+			<hr>
+		</center>
+	</head>
+		<center>
+			<button type = "button" id = "random" >RANDOM</button>
+			<div class = "form-group">
+				<span id = "first_num">?</span>+<span id = "last_num">?</span> = <input type = "number" id = "answer" max = "999" min "0"/>
+			</div>
+			<div class = "form-group">
+			<button type = "button" id = "check">Check</button>
+			</div>
+			result :<span id = "result"></span>
+		</center>
+	<body>
+	</body>
+</html>
